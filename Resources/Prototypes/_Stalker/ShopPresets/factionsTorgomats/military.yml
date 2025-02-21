@@ -481,7 +481,6 @@
         STFoodMeatSalami: 350
         CigPackBlack: 20
         CigCartonBlack: 125
-        MilitaryPSZInventoryRestock: 2000
 
     - name: Боеприпасы
       priority: 3
