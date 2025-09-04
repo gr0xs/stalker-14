@@ -1,0 +1,158 @@
+- type: entity
+  parent: ClothingOuterArmorStorageToggleableBasic
+  id: STClothingOuterArmorExoskeletonBase
+  abstract: true
+  name: экзоскелет
+  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  suffix: ST, T6, PVP
+  components:
+  - type: STWeight
+    self: 25
+  - type: PullDoAfter
+    pullTime: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoskeleton_stalker.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoskeleton_stalker.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetExoskeletonBase
+  - type: Armor
+    armorClass: 6
+    modifiers:
+      flatReductions:
+        Blunt: 7
+        Slash: 7
+        Piercing: 9
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.5
+        Radiation: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.75
+  - type: STPoweredExoskeleton
+    overloadChange: 150
+    maximumChange: 200
+    toggleAction: ActionToggleExoskeleton
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: PowerCellDraw
+    drawRate: 0.4
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Tag
+    tags:
+    - BlockCloak
+    - BlockBack
+    - BlockBelt
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: STClothingHeadHelmetExoskeletonBase
+  abstract: true
+  suffix: ST, T5
+  name: шлем экзоскелета
+  description: В отличие от самого экзача, можно сказать вполне обычный шлем, 5й класс.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/exoskeleton_helm_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/exoskeleton_helm_stalker.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    armorClass: 5
+    modifiers:
+      flatReductions:
+        Blunt: 6
+        Slash: 6
+        Piercing: 6
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 360
+    reflects:
+    - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+# stalker
+
+- type: entity
+  parent: STClothingOuterArmorExoskeletonBase
+  id: STClothingOuterArmorExoskeletonStalker
+  name: сталкерский экзоскелет
+  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoskeleton_stalker.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoskeleton_stalker.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetExoskeletonStalker
+
+- type: entity
+  parent: STClothingHeadHelmetExoskeletonBase
+  id: STClothingHeadHelmetExoskeletonStalker
+  categories: [ HideSpawnMenu ]
+  name: шлем сталкерского экзоскелета
+  description: В отличие от самого экзача, можно сказать вполне обычный шлем, 5й класс.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/exoskeleton_helm_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/exoskeleton_helm_stalker.rsi
+
+# monolith
+
+## white camo
+
+- type: entity
+  parent: STClothingOuterArmorExoskeletonBase
+  id: STClothingOuterArmorExoskeletonMonolith
+  name: экзоскелет монолита
+  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoskeleton_monolith.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoskeleton_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetExoskeletonMonolith
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
+
+- type: entity
+  parent: STClothingHeadHelmetExoskeletonBase
+  id: STClothingHeadHelmetExoskeletonMonolith
+  categories: [ HideSpawnMenu ]
+  name: шлем экзоскелета монолита
+  description: В отличие от самого экзача, можно сказать вполне обычный шлем, 5й класс.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/exoskeleton_helm_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/exoskeleton_helm_monolith.rsi

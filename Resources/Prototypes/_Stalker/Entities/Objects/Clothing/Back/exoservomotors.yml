@@ -1,0 +1,77 @@
+# base
+
+- type: entity
+  parent: [Clothing, ContentsExplosionResistanceBase]
+  id: STClothingBackpackExoskeletonServomotorBase
+  abstract: true
+  suffix: Stalker
+  name: сервопривод экзоскелета
+  description: билдовский экзач ебать.
+  components:
+  - type: STWeight
+    self: 10
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/exo_servomotor_stalker.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/exo_servomotor_stalker.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: PullDoAfter
+    pullTime: 10
+  - type: STPoweredExoskeleton
+    overloadChange: 150
+    maximumChange: 200
+    toggleAction: ActionToggleExoskeleton
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: PowerCellDraw
+    drawRate: 0.4
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Tag
+    tags:
+    - BlockCloak
+    - BlockBack
+    - BlockBelt
+
+# stalker
+
+- type: entity
+  parent: STClothingBackpackExoskeletonServomotorBase
+  id: STClothingBackpackExoskeletonServomotorStalker
+  suffix: Stalker
+  name: сервопривод сталкерского экзоскелета
+  description: билдовский экзач ебать.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/exo_servomotor_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/exo_servomotor_stalker.rsi
+
+# monolith
+
+- type: entity
+  parent: STClothingBackpackExoskeletonServomotorBase
+  id: STClothingBackpackExoskeletonServomotorStalker
+  suffix: Stalker
+  name: сервопривод сталкерского экзоскелета
+  description: билдовский экзач ебать.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/exo_servomotor_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/exo_servomotor_monolith.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 9

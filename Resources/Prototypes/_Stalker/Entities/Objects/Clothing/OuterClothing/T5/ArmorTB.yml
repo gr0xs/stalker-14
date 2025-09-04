@@ -1,0 +1,142 @@
+# base
+
+- type: entity
+  parent: ClothingOuterArmorStorageToggleableBasic
+  id: STClothingOuterArmorTBBase
+  abstract: true
+  name: тяжёлый бронекостюм
+  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  suffix: ST, T5, PVP
+  components:
+  - type: STWeight
+    self: 12
+  - type: PullDoAfter
+    pullTime: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/tb_stalker.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/tb_stalker.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetTBBase
+  - type: Armor
+    armorClass: 5
+    modifiers:
+      flatReductions:
+        Blunt: 7
+        Slash: 7
+        Piercing: 8
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.55
+        Radiation: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.8
+  - type: Tag
+    tags:
+    - BlockCloak
+    - BlockBack
+    - BlockBelt
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: STClothingHeadHelmetTBBase
+  abstract: true
+  suffix: ST, T5
+  name: шлем тяжёлого бронекостюма
+  description: В отличие от самого экзача, можно сказать вполне обычный шлем, 5й класс.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/tb_helm_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/tb_helm_stalker.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    armorClass: 5
+    modifiers:
+      flatReductions:
+        Blunt: 6
+        Slash: 6
+        Piercing: 6
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 360
+    reflects:
+    - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+# stalker
+
+- type: entity
+  parent: STClothingOuterArmorTBBase
+  id: STClothingOuterArmorTBStalker
+  name: сталкерский тяжёлый бронекостюм
+  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/tb_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/tb_stalker.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetTBStalker
+
+- type: entity
+  parent: STClothingHeadHelmetTBBase
+  id: STClothingHeadHelmetTBStalker
+  categories: [ HideSpawnMenu ]
+  name: шлем сталкерского тяжёлого бронекостюма
+  description: В отличие от самого экзача, можно сказать вполне обычный шлем, 5й класс.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/tb_helm_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/tb_helm_stalker.rsi
+
+# monolith
+
+## white camo
+
+- type: entity
+  parent: STClothingOuterArmorTBBase
+  id: STClothingOuterArmorTBMonolith
+  name: тяжёлый бронекостюм монолита
+  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/tb_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/tb_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetTBMonolith
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 18.01
+
+- type: entity
+  parent: STClothingHeadHelmetTBBase
+  id: STClothingHeadHelmetTBMonolith
+  categories: [ HideSpawnMenu ]
+  name: шлем тяжёлого бронекостюма монолита
+  description: В отличие от самого экзача, можно сказать вполне обычный шлем, 5й класс.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/tb_helm_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/tb_helm_monolith.rsi

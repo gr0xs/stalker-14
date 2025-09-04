@@ -61,14 +61,41 @@
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base
-  id: ClothingMaskGasExs
-  name: стандартный противогаз экзоскелета
-  description: Ваще без брони, хоть и от экзы.
+  id: ClothingMaskGasExoskeletonStalker
+  name: противогаз сталкерского экзоскелета
+  description: Дешёвый и эффективный.  Защищает от радиации.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/gasmask_exoskelet.rsi
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_exoskeleton_stalker.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/gasmask_exoskelet.rsi
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_exoskeleton_stalker.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - FacialHair
+    hideOnToggle: true
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasExoskeletonMonolith
+  name: противогаз экзоскелета монолита
+  description: Дешёвый и эффективный.  Защищает от радиации.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_exoskeleton_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_exoskeleton_monolith.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - FacialHair
+    hideOnToggle: true
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 9
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base

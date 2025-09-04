@@ -357,6 +357,17 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHatMonolith
     slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 12
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.6
   - type: PersonalDamage
     damage:
       types:
@@ -395,6 +406,17 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHatMonolith
     slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 12
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.6
   - type: PersonalDamage
     damage:
       types:
